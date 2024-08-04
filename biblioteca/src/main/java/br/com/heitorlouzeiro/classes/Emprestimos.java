@@ -4,7 +4,7 @@ public class Emprestimos {
     private int idEmprestimo;
     private String dataEmprestimo;
     private String dataDevolucao;
-    private boolean statusEmprestimo;
+    private int statusEmprestimo;
     private int idLivro;
     private int idAluno;
     
@@ -26,10 +26,10 @@ public class Emprestimos {
     public void setDataDevolucao(String dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
-    public boolean isStatusEmprestimo() {
+    public int isStatusEmprestimo() {
         return statusEmprestimo;
     }
-    public void setStatusEmprestimo(boolean statusEmprestimo) {
+    public void setStatusEmprestimo(int statusEmprestimo) {
         this.statusEmprestimo = statusEmprestimo;
     }
     public int getIdLivro() {
