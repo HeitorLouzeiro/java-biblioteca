@@ -8,8 +8,13 @@ DROP TABLE IF EXISTS emprestimos;
 CREATE TABLE IF NOT EXISTS funcionarios (
     idFuncionario INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
     nomeFuncionario VARCHAR(255) NOT NULL,
-    emailFuncionario VARCHAR(255) NOT NULL
+    emailFuncionario VARCHAR(255)
 );
+
+INSERT INTO funcionarios (nomeFuncionario, emailFuncionario) VALUES
+('Ana Silva', NULL),
+('Heitor Louzeiro', 'heitor.louzeiro@example.com'),
+('João Pedro', 'joao.pedro@example.com');
 
 CREATE TABLE IF NOT EXISTS livros (
     idLivro INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
