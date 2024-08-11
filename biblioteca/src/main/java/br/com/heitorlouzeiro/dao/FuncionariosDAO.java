@@ -51,6 +51,18 @@ public class FuncionariosDAO {
 
         statement.close();
     }
+    public void deletarFuncionario(int idFuncionario) throws SQLException {
+        System.out.println("Deletando Funcionario...");
+
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM funcionarios WHERE idFuncionario = ?");
+        statement.setInt(1, idFuncionario);
+
+        statement.executeUpdate();
+
+        statement.close();
+
+    }
+    
 
     public void buscarFuncionario(Funcionarios funcionarios) throws SQLException {
         System.out.println("Buscando Funcionario...");
@@ -88,16 +100,6 @@ public class FuncionariosDAO {
         System.out.println("Funcionario atualizado com sucesso!");
     }
 
-    public void deletarFuncionario(int idFuncionario) throws SQLException {
-        System.out.println("Deletando Funcionario...");
 
-        PreparedStatement statement = connection.prepareStatement("DELETE FROM funcionarios WHERE idFuncionario = ?");
-        statement.setInt(1, idFuncionario);
-
-        statement.executeUpdate();
-
-        statement.close();
-
-    }
 
 }
