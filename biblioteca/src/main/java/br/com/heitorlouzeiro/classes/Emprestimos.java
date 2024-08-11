@@ -1,12 +1,16 @@
 package br.com.heitorlouzeiro.classes;
 
+import java.sql.Date;
+
 public class Emprestimos {
     private int idEmprestimo;
-    private String dataEmprestimo;
-    private String dataDevolucao;
+    private Date dataEmprestimo;
+    private Date dataDevolucao;
     private int statusEmprestimo;
     private int idLivro;
     private int idAluno;
+    private String nomeAluno;
+    private String tituloLivro;
     
     public int getIdEmprestimo() {
         return idEmprestimo;
@@ -14,19 +18,19 @@ public class Emprestimos {
     public void setIdEmprestimo(int idEmprestimo) {
         this.idEmprestimo = idEmprestimo;
     }
-    public String getDataEmprestimo() {
+    public Date getDataEmprestimo() {
         return dataEmprestimo;
     }
-    public void setDataEmprestimo(String dataEmprestimo) {
+    public void setDataEmprestimo(Date dataEmprestimo) {
         this.dataEmprestimo = dataEmprestimo;
     }
-    public String getDataDevolucao() {
+    public Date getDataDevolucao() {
         return dataDevolucao;
     }
-    public void setDataDevolucao(String dataDevolucao) {
+    public void setDataDevolucao(Date dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
-    public int isStatusEmprestimo() {
+    public int getStatusEmprestimo() {
         return statusEmprestimo;
     }
     public void setStatusEmprestimo(int statusEmprestimo) {
@@ -43,6 +47,18 @@ public class Emprestimos {
     }
     public void setIdAluno(int idAluno) {
         this.idAluno = idAluno;
+    }
+    public String getNomeAluno() {
+        return nomeAluno;
+    }
+    public void setNomeAluno(String nomeAluno) {
+        this.nomeAluno = nomeAluno;
+    }
+    public String getTituloLivro() {
+        return tituloLivro;
+    }
+    public void setTituloLivro(String tituloLivro) {
+        this.tituloLivro = tituloLivro;
     }
     
 }

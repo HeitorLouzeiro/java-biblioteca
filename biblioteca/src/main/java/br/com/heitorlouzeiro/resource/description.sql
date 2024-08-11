@@ -83,8 +83,8 @@ INSERT INTO alunos (nomeAluno, telefone, endereco, emailAluno) VALUES
 CREATE TABLE IF NOT EXISTS emprestimos (
     idEmprestimo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
     dataEmprestimo DATE NOT NULL,
-    dataDevolucao DATE NOT NULL,
-    devolvido BOOLEAN NOT NULL,
+    dataDevolucao DATE,
+    devolvido INTEGER NOT NULL,
     idAluno INTEGER NOT NULL,
     idLivro INTEGER NOT NULL,
     FOREIGN KEY (idAluno) REFERENCES alunos(idAluno),
