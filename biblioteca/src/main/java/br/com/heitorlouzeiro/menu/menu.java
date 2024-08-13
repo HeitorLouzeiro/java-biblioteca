@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class menu {
     private static Scanner scanner = new Scanner(System.in);
+
     public static void exibirMenu() {
-        System.out.println("Bem vindo ao sistema de biblioteca"); 
-        exibirMenuPrincipal();
-        System.out.println("Escolha uma opção: ");
+        System.out.println("Bem vindo ao sistema de biblioteca");
         int opcao = -1;
-        do{
+        do {
+            exibirMenuPrincipal();
+            System.out.println("Escolha uma opção: ");
             if (scanner.hasNextInt()) {
                 opcao = scanner.nextInt();
             } else {
@@ -17,7 +18,7 @@ public class menu {
                 scanner.next();
                 continue;
             }
-            switch(opcao){
+            switch (opcao) {
                 case 1:
                     exibirMenuLivros();
                     break;
@@ -33,35 +34,31 @@ public class menu {
                 default:
                     System.out.println("Opção inválida.");
             }
-        }while(opcao != 0);
+        } while (opcao != 0);
     }
 
-    private static void exibirMenuPrincipal(){
-        String opcoes[] = {"Livros.", "Alunos.", "Empréstimos."};
-        for(int i = 0; i < opcoes.length; i++){
-            System.out.println(i + 1 + " - " + opcoes[i]);
-        }
+    private static void exibirMenuPrincipal() {
+        System.out.println("1 - Livros.");
+        System.out.println("2 - Alunos.");
+        System.out.println("3 - Empréstimos.");
         System.out.println("0 - Sair.");
     }
-    
 
-    private static void exibirMenuLivros(){
-        String opcoes[] = {"Listar livros.", "Cadastrar livro.", "Buscar livro.", "Excluir livro."};
-        for (int i = 0; i < opcoes.length; i++) {
-            System.out.println(i + 1 + " - " + opcoes[i]);
-        }
+    private static void exibirMenuLivros() {
+        String opcoes[] = { "Listar livros.", "Cadastrar livro.", "Buscar livro.", "Excluir livro." };
+        GenciadorAcoes.executarAcao(opcoes, scanner);
+
     }
-    private static void exibirMenuAlunos(){
-        String opcoes[] = {"Listar alunos.", "Cadastrar aluno.", "Buscar aluno.", "Excluir aluno."};
-        for (int i = 0; i < opcoes.length; i++) {
-            System.out.println(i + 1 + " - " + opcoes[i]);
-        }
+
+    private static void exibirMenuAlunos() {
+        String opcoes[] = { "Listar alunos.", "Cadastrar aluno.", "Buscar aluno.", "Excluir aluno." };
+        GenciadorAcoes.executarAcao(opcoes, scanner);
     }
-    private static void exibirMenuEmprestimos(){
-        String opcoes[] = {"Listar empréstimos.", "Cadastrar empréstimo.", "Buscar empréstimo.", "Atualizar empréstimo."};
-        for (int i = 0; i < opcoes.length; i++) {
-            System.out.println(i + 1 + " - " + opcoes[i]);
-        }
+
+    private static void exibirMenuEmprestimos() {
+        String opcoes[] = { "Listar empréstimos.", "Cadastrar empréstimo.", "Buscar empréstimo.",
+                "Atualizar empréstimo." };
+                GenciadorAcoes.executarAcao(opcoes, scanner);
     }
-    
+
 }
