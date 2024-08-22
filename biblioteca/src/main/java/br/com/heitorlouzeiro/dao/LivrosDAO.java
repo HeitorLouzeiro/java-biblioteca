@@ -46,10 +46,10 @@ public class LivrosDAO {
 
         PreparedStatement statement = connection.prepareStatement("INSERT INTO livros (tituloLivro, anoPublicacao, idAutor, idCategoria) VALUES (?, ?, ?, ?)");
 
-        statement.setString(1, "tituloLivro");
-        statement.setInt(2, 2021);
-        statement.setInt(3, 1);
-        statement.setInt(4, 1);
+        statement.setString(1, livros.getTituloLivro());
+        statement.setInt(2, livros.getAnoPublicacao());
+        statement.setInt(3, livros.getIdAutor());
+        statement.setInt(4, livros.getIdCategoria());
 
         statement.executeUpdate();
 

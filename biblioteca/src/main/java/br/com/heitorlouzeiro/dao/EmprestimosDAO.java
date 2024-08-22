@@ -67,7 +67,7 @@ public class EmprestimosDAO {
         statement.setInt(1, emprestimo.getIdAluno());
         statement.setInt(2, emprestimo.getIdLivro());
         statement.setString(3, dateTimeString);
-        statement.setInt(4, emprestimo.getStatusEmprestimo());
+        statement.setInt(4, 1);
         statement.executeUpdate();
         statement.close();
     }
