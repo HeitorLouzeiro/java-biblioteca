@@ -69,7 +69,7 @@ INSERT INTO autores (nomeAutor) VALUES
 CREATE TABLE IF NOT EXISTS alunos (
     idAluno INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
     nomeAluno VARCHAR(255) NOT NULL,
-    telefone int(11),
+    telefone int(15),
     endereco VARCHAR(255) NOT NULL,
     emailAluno VARCHAR(255)
 );
