@@ -40,25 +40,23 @@ public class menu {
     private static void exibirMenuPrincipal() {
         System.out.println("1 - Livros.");
         System.out.println("2 - Alunos.");
-        System.out.println("3 - Empréstimos.");
+        System.out.println("3 - Empréstimos de livros.");
         System.out.println("0 - Sair.");
     }
 
     private static void exibirMenuLivros() {
         String opcoes[] = { "Listar livros.", "Cadastrar livro.", "Buscar livro.", "Excluir livro." };
-        GenciadorAcoes.executarAcao(opcoes, scanner);
-
+        GenciadorAcoes.executarAcao(opcoes, scanner, 1);
     }
 
     private static void exibirMenuAlunos() {
         String opcoes[] = { "Listar alunos.", "Cadastrar aluno.", "Buscar aluno.", "Excluir aluno." };
-        GenciadorAcoes.executarAcao(opcoes, scanner);
+        GenciadorAcoes.executarAcao(opcoes, scanner, 2);
     }
 
     private static void exibirMenuEmprestimos() {
         String opcoes[] = { "Listar empréstimos.", "Cadastrar empréstimo.", "Buscar empréstimo.",
                 "Atualizar empréstimo." };
-                GenciadorAcoes.executarAcao(opcoes, scanner);
+        GenciadorAcoes.executarAcao(opcoes, scanner, 3);
     }
-
 }
