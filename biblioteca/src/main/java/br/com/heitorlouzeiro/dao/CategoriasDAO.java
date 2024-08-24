@@ -62,6 +62,10 @@ public class CategoriasDAO {
         statement.setInt(1, idCategoria);
         statement.executeUpdate();
 
+        System.out.println("Categoria deletada com sucesso!");
+
+        System.out.println("-------------------------------");
+
         statement.close();
     }
 

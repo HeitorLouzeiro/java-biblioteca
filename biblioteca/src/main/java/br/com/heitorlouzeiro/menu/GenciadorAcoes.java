@@ -216,7 +216,33 @@ public class GenciadorAcoes {
                             menu.exibirMenuAlunos();
                         }
                     } else if (tipo == 4 ){
-                        System.out.println("Digite o id do autor: ");
+                        while (condition) {
+                            menuBuscar.menuBuscarAutor();
+                            System.out.println("Deseja realizar outra pesquisa? (s/n)");
+                            String opcaoPesquisa = scanner.nextLine();
+                            if (opcaoPesquisa.equals("s")) {
+                                condition = true;
+                            } else {
+                                condition = false;
+                            }
+                            deletar.menuDeletarAutor();
+                            menu.exibirMenuAutores();
+                            
+                        }
+                    }else if (tipo == 5 ){
+                        while (condition) {
+                            menuBuscar.menuBuscarCategoria();
+                            System.out.println("Deseja realizar outra pesquisa? (s/n)");
+                            String opcaoPesquisa = scanner.nextLine();
+                            if (opcaoPesquisa.equals("s")) {
+                                condition = true;
+                            } else {
+                                condition = false;
+                            }
+                            deletar.menuDeletarCategoria();
+                            menu.exibirMenuCategorias();
+                            
+                        }
                     }
 
                     break;
