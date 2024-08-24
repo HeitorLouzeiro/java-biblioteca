@@ -35,9 +35,15 @@ public class GenciadorAcoes {
                     } else if (tipo == 2) {
                         listar.menuListarAlunos();
                         menu.exibirMenuAlunos();
-                    } else {
+                    } else if (tipo == 3) {
                         listar.menuListarEmprestimos();
                         menu.exibirMenuEmprestimos();
+                    } else if (tipo == 4) {
+                        listar.menuListarAutores();
+                        menu.exibirMenuAutores();
+                    } else {
+                        listar.menuListarCategorias();
+                        menu.exibirMenuCategorias();
                     }
                     break;
                 case 2:
@@ -49,11 +55,20 @@ public class GenciadorAcoes {
                         cadastrar.cadastrarAluno();
                         listar.menuListarAlunos();
                         menu.exibirMenuAlunos();
-                    } else {
+                    } else if (tipo == 3) {
                         cadastrar.cadastrarEmprestimo();
                         listar.menuListarEmprestimos();
                         menu.exibirMenuEmprestimos();
+                    }else if (tipo == 4) {
+                        cadastrar.menuCadastrarAutor();
+                        listar.menuListarAutores();
+                        menu.exibirMenuAutores();
+                    } else {
+                        cadastrar.cadastrarCategoria();
+                        listar.menuListarCategorias();
+                        menu.exibirMenuCategorias();
                     }
+
                     break;
                 case 3:
                     if (tipo == 1) {
@@ -94,7 +109,7 @@ public class GenciadorAcoes {
                                 }
                             }
                         }
-                    } else {
+                    } else if (tipo == 3) {
                         System.out.println("1 - Buscar empréstimo pelo livro.");
                         System.out.println("2 - Buscar empréstimo pelo aluno.");
                         System.out.println("0 - Voltar.");
@@ -126,7 +141,48 @@ public class GenciadorAcoes {
 
                             }
                         }
-                    }                   
+                    }
+                    else if (tipo == 4){
+                        while (condition) {
+                            menuBuscar.menuBuscarAutor();
+                            System.out.println("Deseja realizar outra pesquisa? (s/n)");
+                            String opcaoPesquisa = scanner.nextLine();
+                            if (opcaoPesquisa.equals("s")) {
+                                condition = true;
+                            } else {
+                                condition = false;
+                                System.out.println("Deseja editar o autor? (s/n)");
+                                String opcaoEditar = scanner.nextLine();
+                                if (opcaoEditar.equals("s")) {
+                                    editar.menuEditarAutor();
+                                    listar.menuListarAutores();
+                                }else{
+                                    menu.exibirMenuAutores();
+                                }
+                            }
+                        }                        
+                    }else if (tipo == 5){
+                        while (condition) {
+                            menuBuscar.menuBuscarCategoria();
+                            System.out.println("Deseja realizar outra pesquisa? (s/n)");
+                            String opcaoPesquisa = scanner.nextLine();
+                            if (opcaoPesquisa.equals("s")) {
+                                condition = true;
+                            } else {
+                                condition = false;
+                                System.out.println("Deseja editar a categoria? (s/n)");
+                                String opcaoEditar = scanner.nextLine();
+                                if (opcaoEditar.equals("s")) {
+                                    editar.menuEditarCategoria();
+                                    listar.menuListarCategorias();
+                                }else{
+                                    menu.exibirMenuCategorias();
+                                }
+                            }
+                        }                        
+                    }else{
+                        System.out.println("Opção inválida.");
+                    }                
                     break;
 
                 case 4:
@@ -159,7 +215,8 @@ public class GenciadorAcoes {
                             listar.menuListarAlunos();
                             menu.exibirMenuAlunos();
                         }
-                    } else {
+                    } else if (tipo == 4 ){
+                        System.out.println("Digite o id do autor: ");
                     }
 
                     break;

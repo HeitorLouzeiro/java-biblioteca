@@ -28,6 +28,12 @@ public class menu {
                 case 3:
                     exibirMenuEmprestimos();
                     break;
+                case 4:
+                    exibirMenuAutores();
+                    break;
+                case 5:
+                    exibirMenuCategorias();
+                    break;
                 case 0:
                     System.out.println("Saindo do sistema.");
                     break;
@@ -41,6 +47,8 @@ public class menu {
         System.out.println("1 - Livros.");
         System.out.println("2 - Alunos.");
         System.out.println("3 - Empréstimos de livros.");
+        System.out.println("4 - Autores.");
+        System.out.println("5 - Categorias.");
         System.out.println("0 - Sair.");
     }
 
@@ -53,9 +61,19 @@ public class menu {
         String opcoes[] = { "Listar alunos.", "Cadastrar aluno.", "Atualizar aluno","Excluir aluno." };
         GenciadorAcoes.executarAcao(opcoes, scanner, 2);
     }
-
     static void exibirMenuEmprestimos() {
         String opcoes[] = { "Listar empréstimos.", "Cadastrar empréstimo.","Atualizar empréstimo.", ""};
         GenciadorAcoes.executarAcao(opcoes, scanner, 3);
     }
+    
+    static void exibirMenuAutores() {
+        String opcoes[] = { "Listar autores.", "Cadastrar autor.","Atualizar autor.", "Excluir autor." };
+        GenciadorAcoes.executarAcao(opcoes, scanner, 4);
+    }
+
+    static void exibirMenuCategorias() {
+        String opcoes[] = { "Listar categorias.", "Cadastrar categoria.","Atualizar categoria.", "Excluir categoria." };
+        GenciadorAcoes.executarAcao(opcoes, scanner, 5);
+    }
+
 }

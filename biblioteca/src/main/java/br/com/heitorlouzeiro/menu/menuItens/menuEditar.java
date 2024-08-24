@@ -5,10 +5,14 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import br.com.heitorlouzeiro.classes.Alunos;
+import br.com.heitorlouzeiro.classes.Autores;
+import br.com.heitorlouzeiro.classes.Categorias;
 import br.com.heitorlouzeiro.classes.Emprestimos;
 import br.com.heitorlouzeiro.classes.Livros;
 import br.com.heitorlouzeiro.dao.LivrosDAO;
 import br.com.heitorlouzeiro.dao.AlunosDAO;
+import br.com.heitorlouzeiro.dao.AutoresDAO;
+import br.com.heitorlouzeiro.dao.CategoriasDAO;
 import br.com.heitorlouzeiro.dao.EmprestimosDAO;
 
 public class menuEditar {
@@ -79,6 +83,33 @@ public class menuEditar {
 
         emprestimo.setIdEmprestimo(idEmprestimo);
         emprestimosDAO.devolverLivro(emprestimo);
+    }
+
+    public void menuEditarAutor() throws SQLException, IOException {
+        Autores autor = new Autores();
+        AutoresDAO autoresDAO = new AutoresDAO();
+
+        System.out.println("Digite o id do autor: ");
+        autor.setIdAutor(scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Digite o nome do autor: ");
+        autor.setNomeAutor(scanner.nextLine());
+
+        autoresDAO.atualizarAutor(autor);
+    }
+
+    public void menuEditarCategoria() throws IOException, SQLException {
+        Categorias categoria = new Categorias();
+        CategoriasDAO categoriaDAO = new CategoriasDAO();
+
+        System.out.println("Digite o id da categoria: ");
+        categoria.setIdCategoria(scanner.nextInt());
+        scanner.nextLine();
+
+        System.out.println("Digite o nome da categoria: ");
+        categoria.setNomeCategoria(scanner.nextLine());
+
+        categoriaDAO.atualizarCategoria(categoria);
     }
     
 }

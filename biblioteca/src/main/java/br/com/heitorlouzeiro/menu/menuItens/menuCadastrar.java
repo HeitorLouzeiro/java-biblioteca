@@ -5,9 +5,13 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import br.com.heitorlouzeiro.classes.Alunos;
+import br.com.heitorlouzeiro.classes.Autores;
+import br.com.heitorlouzeiro.classes.Categorias;
 import br.com.heitorlouzeiro.classes.Emprestimos;
 import br.com.heitorlouzeiro.classes.Livros;
 import br.com.heitorlouzeiro.dao.AlunosDAO;
+import br.com.heitorlouzeiro.dao.AutoresDAO;
+import br.com.heitorlouzeiro.dao.CategoriasDAO;
 import br.com.heitorlouzeiro.dao.EmprestimosDAO;
 import br.com.heitorlouzeiro.dao.LivrosDAO;
 
@@ -75,6 +79,28 @@ public class menuCadastrar {
         scanner.nextLine();
         
         emprestimosDAO.cadastrarEmprestimo(emprestimo);
+
+    }
+
+    public void menuCadastrarAutor() throws IOException, SQLException {
+        AutoresDAO autoresDAO = new AutoresDAO();
+        Autores autor = new Autores();
+
+        System.out.println("Digite o nome do autor: ");
+        autor.setNomeAutor(scanner.nextLine());
+        
+        autoresDAO.cadastrarAutor(autor);
+
+    }
+
+    public void cadastrarCategoria() throws IOException, SQLException {
+        CategoriasDAO categoriasDAO = new CategoriasDAO();
+        Categorias categoria = new Categorias();
+
+        System.out.println("Digite o nome da categoria: ");
+        categoria.setNomeCategoria(scanner.nextLine());
+        
+        categoriasDAO.cadastrarCategoria(categoria);
 
     }
     
