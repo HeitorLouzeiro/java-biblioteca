@@ -39,6 +39,7 @@ public class menuBuscar {
     public void menuBuscarEmprestimoLivro() throws IOException {
         Emprestimos emprestimo = new Emprestimos(); 
         EmprestimosDAO emprestimosDAO = new EmprestimosDAO();
+        
 
         System.out.println("Digite o nome do livro: ");
         emprestimo.setTituloLivro(scanner.nextLine());

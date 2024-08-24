@@ -5,9 +5,11 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import br.com.heitorlouzeiro.classes.Alunos;
+import br.com.heitorlouzeiro.classes.Emprestimos;
 import br.com.heitorlouzeiro.classes.Livros;
 import br.com.heitorlouzeiro.dao.LivrosDAO;
 import br.com.heitorlouzeiro.dao.AlunosDAO;
+import br.com.heitorlouzeiro.dao.EmprestimosDAO;
 
 public class menuEditar {
     Scanner scanner = new Scanner(System.in);
@@ -65,6 +67,18 @@ public class menuEditar {
         aluno.setEnderecoAluno(enderecoAluno);
 
         alunoDAO.atualizarAluno(aluno);
+    }
+
+    public void menuEditarEmprestimo() throws SQLException, IOException {
+        EmprestimosDAO emprestimosDAO = new EmprestimosDAO();
+        Emprestimos emprestimo = new Emprestimos();
+
+        System.out.println("Digite o id do empréstimo: ");
+        int idEmprestimo = scanner.nextInt();
+        scanner.nextLine();
+
+        emprestimo.setIdEmprestimo(idEmprestimo);
+        emprestimosDAO.devolverLivro(emprestimo);
     }
     
 }

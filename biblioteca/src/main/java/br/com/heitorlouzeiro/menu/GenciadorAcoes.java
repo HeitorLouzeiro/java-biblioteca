@@ -76,7 +76,24 @@ public class GenciadorAcoes {
                             }
                         }
                     } else if (tipo == 2) {
-
+                        while (condition) {
+                            menuBuscar.menuBuscarAluno();
+                            System.out.println("Deseja realizar outra pesquisa? (s/n)");
+                            String opcaoPesquisa = scanner.nextLine();
+                            if (opcaoPesquisa.equals("s")) {
+                                condition = true;
+                            } else {
+                                condition = false;
+                                System.out.println("Deseja editar o aluno? (s/n)");
+                                String opcaoEditar = scanner.nextLine();
+                                if (opcaoEditar.equals("s")) {
+                                    editar.menuEditarAluno();
+                                    listar.menuListarAlunos();
+                                }else{
+                                    menu.exibirMenuAlunos();
+                                }
+                            }
+                        }
                     } else {
                         System.out.println("1 - Buscar empréstimo pelo livro.");
                         System.out.println("2 - Buscar empréstimo pelo aluno.");
@@ -105,6 +122,8 @@ public class GenciadorAcoes {
                                 condition = true;
                             } else {
                                 condition = false;
+                                editar.menuEditarEmprestimo();
+
                             }
                         }
                     }                   
