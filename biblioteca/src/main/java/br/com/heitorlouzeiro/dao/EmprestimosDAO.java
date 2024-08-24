@@ -84,8 +84,6 @@ public class EmprestimosDAO {
     }
 
     public void buscarEmprestimo(Emprestimos emprestimo) {
-        System.out.println("Buscando emprestimo...");
-    
         try {
             // Consulta SQL para buscar por nome do aluno ou nome do livro
             String sql = "SELECT * FROM emprestimos " +
@@ -101,14 +99,20 @@ public class EmprestimosDAO {
     
             ResultSet resultSet = statement.executeQuery();
     
-            while (resultSet.next()) {
-                System.out.println("Nome do aluno: " + resultSet.getString("nomeAluno"));
-                System.out.println("Nome do livro: " + resultSet.getString("tituloLivro"));
-                System.out.println("Data de emprestimo: " + resultSet.getString("dataEmprestimo"));
-                System.out.println("Data de devolucao: " + resultSet.getString("dataDevolucao"));
-                String status = resultSet.getInt("devolvido") == 0 ? "Devolvido" : "Emprestado";
-                System.out.println("Status: " + status);
-                System.out.println("-------------------------------");
+            // Imprime os resultados
+            if (resultSet.next()){
+               do {
+                    System.out.println("ID do empréstimo: " + resultSet.getInt("idEmprestimo"));
+                    System.out.println("Nome do aluno: " + resultSet.getString("nomeAluno"));
+                    System.out.println("Nome do livro: " + resultSet.getString("tituloLivro"));
+                    System.out.println("Data de emprestimo: " + resultSet.getString("dataEmprestimo"));
+                    System.out.println("Data de devolucao: " + resultSet.getString("dataDevolucao"));
+                    String status = resultSet.getInt("devolvido") == 0 ? "Devolvido" : "Emprestado";
+                    System.out.println("Status: " + status);
+                    System.out.println("-------------------------------");
+                } while (resultSet.next());
+            } else {
+                System.out.println("Nenhum empréstimo encontrado com esse dado.");
             }
     
             statement.close();

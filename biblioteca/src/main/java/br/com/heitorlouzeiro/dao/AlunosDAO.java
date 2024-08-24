@@ -30,7 +30,12 @@ public class AlunosDAO {
 
              // Imprime os resultados
              while (resultSet.next()) {
-                 System.out.println("Nome: " + resultSet.getString("nomeAluno"));
+                    System.out.println("ID: " + resultSet.getInt("idAluno"));
+                    System.out.println("Nome: " + resultSet.getString("nomeAluno"));
+                    System.out.println("Email: " + resultSet.getString("emailAluno"));
+                    System.out.println("Telefone: " + resultSet.getInt("telefone"));
+                    System.out.println("Endereço: " + resultSet.getString("endereco"));
+                    System.out.println("----------------------------------------------");
              }
              statement.close();
         } catch (Exception e) {
@@ -83,10 +88,12 @@ public class AlunosDAO {
             // Imprime os resultados
             if(resultSet.next()) {
               do {
+                System.out.println("ID: " + resultSet.getInt("idAluno"));
                 System.out.println("Nome: " + resultSet.getString("nomeAluno"));
                 System.out.println("Email: " + resultSet.getString("emailAluno"));
                 System.out.println("Telefone: " + resultSet.getInt("telefone"));
                 System.out.println("Endereço: " + resultSet.getString("endereco"));
+                System.out.println("----------------------------------------------");
               } while (resultSet.next());
             } else {
                 System.out.println("Aluno não encontrado.");
