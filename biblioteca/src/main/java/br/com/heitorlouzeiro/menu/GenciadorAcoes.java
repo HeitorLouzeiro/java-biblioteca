@@ -141,6 +141,7 @@ public class GenciadorAcoes {
 
                             }
                         }
+                        listar.menuListarEmprestimos();
                     }
                     else if (tipo == 4){
                         while (condition) {
@@ -246,7 +247,6 @@ public class GenciadorAcoes {
                     }
 
                     break;
-
                 case 0:
                     System.out.println("Voltando ao menu anterior.");
                     return;

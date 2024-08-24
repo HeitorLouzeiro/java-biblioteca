@@ -62,7 +62,7 @@ public class menu {
         GenciadorAcoes.executarAcao(opcoes, scanner, 2);
     }
     static void exibirMenuEmprestimos() {
-        String opcoes[] = { "Listar empréstimos.", "Cadastrar empréstimo.","Atualizar empréstimo.", ""};
+        String opcoes[] = { "Listar empréstimos.", "Cadastrar empréstimo.","Atualizar empréstimo."};
         GenciadorAcoes.executarAcao(opcoes, scanner, 3);
     }
     
