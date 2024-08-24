@@ -76,18 +76,28 @@ public class LivrosDAO {
     }
 
     public void buscarLivro(Livros livros) {
-        System.out.println("Buscando livro...");
+        System.out.println("Buscando livro: " + livros.getTituloLivro());
 
         try {
             String query = "SELECT * FROM livros WHERE tituloLivro LIKE ?";
             PreparedStatement statement = connection.prepareStatement(query);
 
-            statement.setString(1, "tituloLivro");
+            statement.setString(1, "%" + livros.getTituloLivro() + "%");
 
             ResultSet resultSet = statement.executeQuery();
 
-            while (resultSet.next()) {
-                System.out.println("Nome: " + resultSet.getString("tituloLivro"));
+            /* 
+             * Se o resultSet tiver algum resultado, imprime o nome do livro.
+             * Caso contrário, imprime que o livro não foi encontrado.
+             * do-while para iterar sobre os resultados restantes.
+             */
+            if (resultSet.next()) {
+                do {
+                    System.out.println("Titulo do livro: " + resultSet.getString("tituloLivro"));
+                } while (resultSet.next()); // Itera sobre os resultados restantes
+
+            } else {
+                System.out.println("Livro não encontrado.");
             }
 
             statement.close();

@@ -80,11 +80,18 @@ public class AlunosDAO {
 
             ResultSet resultSet = statement.executeQuery();
 
-
             // Imprime os resultados
-            while (resultSet.next()) {
+            if(resultSet.next()) {
+              do {
                 System.out.println("Nome: " + resultSet.getString("nomeAluno"));
+                System.out.println("Email: " + resultSet.getString("emailAluno"));
+                System.out.println("Telefone: " + resultSet.getInt("telefone"));
+                System.out.println("Endereço: " + resultSet.getString("endereco"));
+              } while (resultSet.next());
+            } else {
+                System.out.println("Aluno não encontrado.");
             }
+            
             statement.close();
 
 
