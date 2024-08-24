@@ -44,12 +44,12 @@ public class menuCadastrar {
         livro.setAnoPublicacao(scanner.nextInt());
         scanner.nextLine();
 
-        menulistar.listarAutores();
+        menulistar.menuListarAutores();
         System.out.println("Digite o id do autor do livro: ");
         livro.setIdAutor(scanner.nextInt());
         scanner.nextLine();
 
-        menulistar.listarCategorias();
+        menulistar.menuListarCategorias();
         System.out.println("Digite o id da categoria do livro: ");
         livro.setIdCategoria(scanner.nextInt());
         scanner.nextLine();
@@ -64,12 +64,12 @@ public class menuCadastrar {
         Emprestimos emprestimo = new Emprestimos();
         menuListar menulistar = new menuListar();
         
-        menulistar.listarAlunos();
+        menulistar.menuListarAlunos();
         System.out.println("Digite o id do aluno: ");
         emprestimo.setIdAluno(scanner.nextInt());
         scanner.nextLine();
 
-        menulistar.listarLivros();
+        menulistar.menuListarLivros();
         System.out.println("Digite o id do livro: ");
         emprestimo.setIdLivro(scanner.nextInt());
         scanner.nextLine();
