@@ -75,8 +75,14 @@ public class AutoresDAO {
 
             ResultSet resultSet = statement.executeQuery();
 
-            while (resultSet.next()) {
-                System.out.println("Nome: " + resultSet.getString("nomeAutor"));
+            if(resultSet.next()){
+                do{
+                    System.out.println("ID do autor: " + resultSet.getInt("idAutor"));
+                    System.out.println("Nome do autor: " + resultSet.getString("nomeAutor"));
+                    System.out.println("-------------------------------");
+                }while(resultSet.next());
+            }else{
+                System.out.println("Autor não encontrado.");
             }
 
             statement.close();

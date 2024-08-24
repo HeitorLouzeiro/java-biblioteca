@@ -28,10 +28,14 @@ public class CategoriasDAO {
             ResultSet resultSet = statement.executeQuery(query);
 
             // Imprime os resultados
-            while (resultSet.next()) {
-                System.out.println("ID da categoria: " + resultSet.getInt("idCategoria"));
-                System.out.println("Nome da categoria: " + resultSet.getString("nomeCategoria"));
-                System.out.println("-------------------------------");
+            if (resultSet.next()) {
+                do {
+                    System.out.println("ID da categoria: " + resultSet.getInt("idCategoria"));
+                    System.out.println("Nome da categoria: " + resultSet.getString("nomeCategoria"));
+                    System.out.println("-------------------------------");
+                } while (resultSet.next());
+            }else{
+                System.out.println("Nenhuma categoria encontrada.");
             }
             statement.close();
         } catch (Exception e) {
@@ -70,10 +74,15 @@ public class CategoriasDAO {
 
             ResultSet resultSet = statement.executeQuery();
 
-            while (resultSet.next()) {
-                System.out.println("Nome: " + resultSet.getString("nomeCategoria"));
+            if(resultSet.next()){
+                do {
+                    System.out.println("ID da categoria: " + resultSet.getInt("idCategoria"));
+                    System.out.println("Nome da categoria: " + resultSet.getString("nomeCategoria"));
+                    System.out.println("-------------------------------");
+                } while (resultSet.next());
+            }else{
+                System.out.println("Nenhuma categoria encontrada.");
             }
-
             statement.close();
         } catch (Exception e) {
             System.err.println("Error executing SQL query: " + e.getMessage());
