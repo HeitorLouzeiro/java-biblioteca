@@ -29,7 +29,9 @@ public class CategoriasDAO {
 
             // Imprime os resultados
             while (resultSet.next()) {
-                System.out.println("Nome: " + resultSet.getString("nomeCategoria"));
+                System.out.println("ID da categoria: " + resultSet.getInt("idCategoria"));
+                System.out.println("Nome da categoria: " + resultSet.getString("nomeCategoria"));
+                System.out.println("-------------------------------");
             }
             statement.close();
         } catch (Exception e) {

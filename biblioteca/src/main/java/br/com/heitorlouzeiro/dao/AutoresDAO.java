@@ -31,7 +31,9 @@ public class AutoresDAO {
 
              // Imprime os resultados
              while (resultSet.next()) {
-                 System.out.println("Nome: " + resultSet.getString("nomeAutor"));
+                    System.out.println("ID do autor: " + resultSet.getInt("idAutor"));
+                    System.out.println("Nome do autor: " + resultSet.getString("nomeAutor"));
+                    System.out.println("-------------------------------");
              }
              statement.close();
         } catch (Exception e) {
