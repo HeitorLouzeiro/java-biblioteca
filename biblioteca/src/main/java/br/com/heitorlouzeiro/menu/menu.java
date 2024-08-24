@@ -44,19 +44,18 @@ public class menu {
         System.out.println("0 - Sair.");
     }
 
-    private static void exibirMenuLivros() {
-        String opcoes[] = { "Listar livros.", "Cadastrar livro.", "Buscar livro.", "Excluir livro." };
+    static void exibirMenuLivros() {
+        String opcoes[] = { "Listar livros.", "Cadastrar livro.","Atualizar livros", "Excluir livro." };
         GenciadorAcoes.executarAcao(opcoes, scanner, 1);
     }
 
-    private static void exibirMenuAlunos() {
-        String opcoes[] = { "Listar alunos.", "Cadastrar aluno.", "Buscar aluno.", "Excluir aluno." };
+    static void exibirMenuAlunos() {
+        String opcoes[] = { "Listar alunos.", "Cadastrar aluno.", "Atualizar aluno","Excluir aluno." };
         GenciadorAcoes.executarAcao(opcoes, scanner, 2);
     }
 
-    private static void exibirMenuEmprestimos() {
-        String opcoes[] = { "Listar empréstimos.", "Cadastrar empréstimo.", "Buscar empréstimo.",
-                "Atualizar empréstimo." };
+    static void exibirMenuEmprestimos() {
+        String opcoes[] = { "Listar empréstimos.", "Cadastrar empréstimo.","Atualizar empréstimo.", ""};
         GenciadorAcoes.executarAcao(opcoes, scanner, 3);
     }
 }
