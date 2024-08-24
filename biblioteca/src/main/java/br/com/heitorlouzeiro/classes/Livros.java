@@ -6,6 +6,9 @@ public class Livros {
     private int anoPublicacao;
     private int idAutor;
     private int idCategoria;
+    private String nomeAutor;
+    private String nomeCategoria;
+
     
     public int getIdLivro() {
         return idLivro;
@@ -36,6 +39,18 @@ public class Livros {
     }
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
+    }
+    public String getNomeAutor() {
+        return nomeAutor;
+    }
+    public void setNomeAutor(String nomeAutor) {
+        this.nomeAutor = nomeAutor;
+    }
+    public String getNomeCategoria() {
+        return nomeCategoria;
+    }
+    public void setNomeCategoria(String nomeCategoria) {
+        this.nomeCategoria = nomeCategoria;
     }
     
 }
