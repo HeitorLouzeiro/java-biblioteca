@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import br.com.heitorlouzeiro.menu.menuItens.menuCadastrar;
 import br.com.heitorlouzeiro.menu.menuItens.menuDeletar;
+import br.com.heitorlouzeiro.menu.menuItens.menuEditar;
 import br.com.heitorlouzeiro.menu.menuItens.menuListar;
 import br.com.heitorlouzeiro.menu.menuItens.menuBuscar;
 
@@ -12,6 +13,7 @@ public class GenciadorAcoes {
     private static menuCadastrar cadastrar = new menuCadastrar();
     private static menuBuscar menuBuscar = new menuBuscar();
     private static menuDeletar deletar = new menuDeletar();
+    private static menuEditar editar = new menuEditar();
 
     public static void executarAcao(String[] opcoes, Scanner scanner, int tipo) {
         boolean condition = true; // Move declaration to the beginning
@@ -55,8 +57,24 @@ public class GenciadorAcoes {
                     break;
                 case 3:
                     if (tipo == 1) {
-
-                        menu.exibirMenuLivros();
+                        while (condition) {
+                            menuBuscar.menuBuscarLivro();
+                            System.out.println("Deseja realizar outra pesquisa? (s/n)");
+                            String opcaoPesquisa = scanner.nextLine();
+                            if (opcaoPesquisa.equals("s")) {
+                                condition = true;
+                            } else {
+                                condition = false;
+                                System.out.println("Deseja editar o livro? (s/n)");
+                                String opcaoEditar = scanner.nextLine();
+                                if (opcaoEditar.equals("s")) {
+                                    editar.menuEditarLivro();
+                                    listar.menuListarLivros();
+                                }else{
+                                    menu.exibirMenuLivros();
+                                }
+                            }
+                        }
                     } else if (tipo == 2) {
 
                     } else {
