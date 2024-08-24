@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS livros (
 );
 INSERT INTO livros (tituloLivro, anoPublicacao, idCategoria, idAutor) VALUES
 ('Harry Potter e a Pedra Filosofal', 1997, 2, 1),
+('Harry Potter e o prisioneiro de Azkaban', 1999, 2, 1),
 ('A Guerra dos Tronos', 1996, 2, 2),
 ('It: A Coisa', 1986, 3, 3),
 ('Orgulho e Preconceito', 1813, 4, 4),
