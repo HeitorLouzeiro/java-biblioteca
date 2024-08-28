@@ -4,7 +4,7 @@ public class Alunos {
     private int idAluno;
     private String nomeAluno;
     private String emailAluno;
-    private int telefoneAluno;
+    private Long telefoneAluno;
     private String enderecoAluno;
     
     public int getIdAluno() {
@@ -25,10 +25,10 @@ public class Alunos {
     public void setEmailAluno(String emailAluno) {
         this.emailAluno = emailAluno;
     }
-    public int getTelefoneAluno() {
+    public Long getTelefoneAluno() {
         return telefoneAluno;
     }
-    public void setTelefoneAluno(int telefoneAluno) {
+    public void setTelefoneAluno(long telefoneAluno) {
         this.telefoneAluno = telefoneAluno;
     }
     public String getEnderecoAluno() {

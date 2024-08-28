@@ -27,7 +27,7 @@ public class menuCadastrar {
         System.out.println("Digite o email do aluno: ");
         aluno.setEmailAluno(scanner.nextLine());
         System.out.println("Digite o telefone do aluno: ");
-        aluno.setTelefoneAluno(scanner.nextInt());
+        aluno.setTelefoneAluno(scanner.nextLong());
         scanner.nextLine();
         System.out.println("Digite o endereço do aluno: ");
         aluno.setEnderecoAluno(scanner.nextLine());

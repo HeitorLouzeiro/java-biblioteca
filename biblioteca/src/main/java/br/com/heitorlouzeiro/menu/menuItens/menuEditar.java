@@ -59,7 +59,7 @@ public class menuEditar {
         System.out.println("Digite o email do aluno: ");
         String emailAluno = scanner.nextLine();
         System.out.println("Digite o telefone do aluno: ");
-        int telefoneAluno = scanner.nextInt();
+        long telefoneAluno = scanner.nextLong();
         scanner.nextLine();
         System.out.println("Digite o endereço do aluno: ");
         String enderecoAluno = scanner.nextLine();
