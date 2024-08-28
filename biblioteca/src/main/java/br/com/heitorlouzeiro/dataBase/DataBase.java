@@ -4,24 +4,24 @@ import java.io.IOException; // É usada para tratar exceções de entrada e saí
 import java.sql.Connection; // É usada para estabelecer uma conexão com o banco de dados.
 import java.sql.DriverManager; // É usada para carregar o driver do banco de dados.
 import java.sql.SQLException; // É usada para tratar exceções de SQL.
-import java.sql.Statement; // É usada para executar uma instrução SQL.
+
 
 public class DataBase {
+    
     private Connection connection = null;
     private static DataBase INSTANCE = null;
     
     private DataBase() throws IOException {
         try {
+            String user = "root";
+            String senha = "1234";
+            String url = "jdbc:mysql://localhost:3306/javabiblioteca";
 
-            connection = DriverManager.getConnection("jdbc:sqlite:biblioteca/sample.db");
+            connection = DriverManager.getConnection(url, user, senha);
 
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30); // set timeout to 30 sec.
 
-            String sql = FileUltils.loadTextFile("biblioteca/src/main/java/br/com/heitorlouzeiro/resource/description.sql");
-            
-            statement.executeUpdate(sql);
         } catch (SQLException e) {
+            // Em caso de erro, imprime o erro no console.
             System.err.println("Error connecting to the database");
             e.printStackTrace();
         }
