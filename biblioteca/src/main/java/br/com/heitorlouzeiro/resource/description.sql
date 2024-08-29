@@ -8,19 +8,6 @@ DROP TABLE IF EXISTS categorias;
 DROP TABLE IF EXISTS autores;
 
 
-
-CREATE TABLE IF NOT EXISTS funcionarios (
-    idFuncionario INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
-    nomeFuncionario VARCHAR(255) NOT NULL,
-    emailFuncionario VARCHAR(255)
-);
-
-INSERT INTO funcionarios (nomeFuncionario, emailFuncionario) VALUES
-('Ana Silva', NULL),
-('Heitor Louzeiro', 'heitor.louzeiro@example.com'),
-('João Pedro', 'joao.pedro@example.com');
-
-
 CREATE TABLE IF NOT EXISTS categorias (
     idCategoria INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
     nomeCategoria VARCHAR(255) NOT NULL
