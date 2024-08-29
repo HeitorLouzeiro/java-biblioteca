@@ -33,7 +33,7 @@ public class AlunosDAO {
                     System.out.println("ID: " + resultSet.getInt("idAluno"));
                     System.out.println("Nome: " + resultSet.getString("nomeAluno"));
                     System.out.println("Email: " + resultSet.getString("emailAluno"));
-                    System.out.println("Telefone: " + resultSet.getInt("telefone"));
+                    System.out.println("Telefone: " + resultSet.getLong("telefone"));
                     System.out.println("Endereço: " + resultSet.getString("endereco"));
                     System.out.println("----------------------------------------------");
              }
@@ -52,7 +52,7 @@ public class AlunosDAO {
 
         statement.setString(1, aluno.getNomeAluno());
         statement.setString(2, aluno.getEmailAluno());
-        statement.setInt(3, aluno.getTelefoneAluno());
+        statement.setLong(3, aluno.getTelefoneAluno());
         statement.setString(4, aluno.getEnderecoAluno());
 
 
@@ -91,7 +91,7 @@ public class AlunosDAO {
                 System.out.println("ID: " + resultSet.getInt("idAluno"));
                 System.out.println("Nome: " + resultSet.getString("nomeAluno"));
                 System.out.println("Email: " + resultSet.getString("emailAluno"));
-                System.out.println("Telefone: " + resultSet.getInt("telefone"));
+                System.out.println("Telefone: " + resultSet.getLong("telefone"));
                 System.out.println("Endereço: " + resultSet.getString("endereco"));
                 System.out.println("----------------------------------------------");
               } while (resultSet.next());
@@ -118,7 +118,7 @@ public class AlunosDAO {
 
             statement.setString(1, aluno.getNomeAluno());
             statement.setString(2, aluno.getEmailAluno());
-            statement.setInt(3, aluno.getTelefoneAluno());
+            statement.setLong(3, aluno.getTelefoneAluno());
             statement.setString(4, aluno.getEnderecoAluno());
             statement.setInt(5, aluno.getIdAluno());
 

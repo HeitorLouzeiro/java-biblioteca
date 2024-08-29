@@ -1,23 +1,45 @@
-DROP TABLE IF EXISTS funcionarios;
+CREATE DATABASE IF NOT EXISTS javaBiblioteca;
+USE javaBiblioteca;
+
+DROP TABLE IF EXISTS emprestimos;
+DROP TABLE IF EXISTS alunos;
 DROP TABLE IF EXISTS livros;
 DROP TABLE IF EXISTS categorias;
 DROP TABLE IF EXISTS autores;
-DROP TABLE IF EXISTS alunos;
-DROP TABLE IF EXISTS emprestimos;
 
-CREATE TABLE IF NOT EXISTS funcionarios (
-    idFuncionario INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-    nomeFuncionario VARCHAR(255) NOT NULL,
-    emailFuncionario VARCHAR(255)
+
+CREATE TABLE IF NOT EXISTS categorias (
+    idCategoria INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
+    nomeCategoria VARCHAR(255) NOT NULL
 );
+INSERT INTO categorias (nomeCategoria) VALUES
+('Ficção Científica'),
+('Fantasia'),
+('Terror'),
+('Romance'),
+('Biografia'),
+('História'),
+('Autoajuda'),
+('Programação'),
+('Ciência de Dados');
 
-INSERT INTO funcionarios (nomeFuncionario, emailFuncionario) VALUES
-('Ana Silva', NULL),
-('Heitor Louzeiro', 'heitor.louzeiro@example.com'),
-('João Pedro', 'joao.pedro@example.com');
+CREATE TABLE IF NOT EXISTS autores (
+    idAutor INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
+    nomeAutor VARCHAR(255) NOT NULL
+);
+INSERT INTO autores (nomeAutor) VALUES
+('J.K. Rowling'),
+('George R. R. Martin'),
+('Stephen King'),
+('Jane Austen'),
+('Agatha Christie'),
+('Yuval Noah Harari'),
+('Brené Brown'),
+('Robert C. Martin'),
+('Wes McKinney');
 
 CREATE TABLE IF NOT EXISTS livros (
-    idLivro INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+    idLivro INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
     tituloLivro VARCHAR(255) NOT NULL,
     anoPublicacao INTEGER NOT NULL,
     idCategoria INTEGER NOT NULL,
@@ -37,52 +59,22 @@ INSERT INTO livros (tituloLivro, anoPublicacao, idCategoria, idAutor) VALUES
 ('Código Limpo', 2008, 8, 8),
 ('Python para Análise de Dados', 2012, 9, 9);
 
-CREATE TABLE IF NOT EXISTS categorias (
-    idCategoria INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-    nomeCategoria VARCHAR(255) NOT NULL
-);
-INSERT INTO categorias (nomeCategoria) VALUES
-('Ficção Científica'),
-('Fantasia'),
-('Terror'),
-('Romance'),
-('Biografia'),
-('História'),
-('Autoajuda'),
-('Programação'),
-('Ciência de Dados');
-
-CREATE TABLE IF NOT EXISTS autores (
-    idAutor INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-    nomeAutor VARCHAR(255) NOT NULL
-);
-INSERT INTO autores (nomeAutor) VALUES
-('J.K. Rowling'),
-('George R. R. Martin'),
-('Stephen King'),
-('Jane Austen'),
-('Agatha Christie'),
-('Yuval Noah Harari'),
-('Brené Brown'),
-('Robert C. Martin'),
-('Wes McKinney');
-
 CREATE TABLE IF NOT EXISTS alunos (
-    idAluno INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+    idAluno INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
     nomeAluno VARCHAR(255) NOT NULL,
-    telefone int(15),
+    telefone BIGINT,
     endereco VARCHAR(255) NOT NULL,
     emailAluno VARCHAR(255)
 );
 INSERT INTO alunos (nomeAluno, telefone, endereco, emailAluno) VALUES
-('João Silva', '11987654321', 'Rua A, 123', 'joao.silva@email.com'),
-('Maria Oliveira', '21912345678', 'Rua B, 456', 'maria.oliveira@email.com'),
-('Pedro Souza', '31943210987', 'Rua C, 789', 'pedro.souza@email.com'),
-('Ana Santos', '41956781234', 'Rua D, 012', 'ana.santos@email.com'),
-('Lucas Pereira', '51978903456', 'Rua E, 345', 'lucas.pereira@email.com');
+('Joao Silva', 987654321, 'Rua A, 123', 'joao.silva@email.com'),
+('Maria Oliveira', 912345678, 'Rua B, 456', 'maria.oliveira@email.com'),
+('Pedro Souza', 943210987, 'Rua C, 789', 'pedro.souza@email.com'),
+('Ana Santos', 956781234, 'Rua D, 012', 'ana.santos@email.com'),
+('Lucas Pereira', 788903456, 'Rua E, 345', 'lucas.pereira@email.com');
 
 CREATE TABLE IF NOT EXISTS emprestimos (
-    idEmprestimo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+    idEmprestimo INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
     dataEmprestimo DATE NOT NULL,
     dataDevolucao DATE,
     devolvido INTEGER NOT NULL,
